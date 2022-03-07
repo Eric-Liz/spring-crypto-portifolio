@@ -55,4 +55,13 @@ public class ItemController {
         BeanUtils.copyProperties(itemDTO, itemModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(itemService.save(itemModel));
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> updateItem(@PathVariable(value="id")long id){
+        Optional<Item> itemModelOptional = itemService.findById(id);
+        if(!itemModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Item not found.");
+        }
+        itemService.delete(itemModelOptional.get());
+        return ResponseEntity.status(HttpStatus.OK).body("Item deleted successfully.");
+    }
 }
