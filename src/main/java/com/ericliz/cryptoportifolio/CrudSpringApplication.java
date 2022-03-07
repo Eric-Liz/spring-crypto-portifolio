@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.math.BigDecimal;
+
 @SpringBootApplication
 public class CrudSpringApplication {
 
@@ -18,10 +20,16 @@ public class CrudSpringApplication {
 
 		return args->{
 			itemRepository.deleteAll();
-			Item i= new Item();
-			i.setCategory("categoryTst");
-			i.setName("nameTst");
-			itemRepository.save(i);
+			for(int j=0;j<5;j++){
+				Item i= new Item();
+				i.setCategory("categoryTst");
+				i.setName("nameTst"+j);
+				i.setPrice(new BigDecimal(j+33.39*534.27));
+				itemRepository.save(i);
+			}
+
+
+
 		};
 	}
 }
