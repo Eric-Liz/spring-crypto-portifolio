@@ -20,5 +20,7 @@ public class Item {
     @Column(length = 15,nullable = false)
     private String category;
 
+    @Column(nullable = false , precision=10, scale=7)
+    private BigDecimal quantity;
 
 }
