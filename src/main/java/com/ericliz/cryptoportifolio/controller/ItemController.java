@@ -2,7 +2,6 @@ package com.ericliz.cryptoportifolio.controller;
 
 import com.ericliz.cryptoportifolio.dto.ItemDTO;
 import com.ericliz.cryptoportifolio.model.Item;
-import com.ericliz.cryptoportifolio.repository.ItemRepository;
 import com.ericliz.cryptoportifolio.service.ItemService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;

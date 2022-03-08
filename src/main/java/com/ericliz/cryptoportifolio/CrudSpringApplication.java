@@ -24,7 +24,8 @@ public class CrudSpringApplication {
 				Item i= new Item();
 				i.setCategory("categoryTst");
 				i.setName("nameTst"+j);
-				i.setPrice(new BigDecimal(j+33.39*534.27));
+				i.setPrice(new BigDecimal((j+33.39)*534.27));
+				i.setQuantity(new BigDecimal((j+98.33)*5.38));
 				itemRepository.save(i);
 			}
 

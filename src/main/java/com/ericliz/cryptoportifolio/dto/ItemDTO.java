@@ -14,4 +14,6 @@ public class ItemDTO {
     private BigDecimal price;
     @NotBlank
     private String category;
+    @NotBlank
+    private BigDecimal quantity;
 }
