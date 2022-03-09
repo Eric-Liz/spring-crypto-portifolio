@@ -2,6 +2,7 @@ package com.ericliz.cryptoportifolio.controller;
 
 import com.ericliz.cryptoportifolio.dto.ItemDTO;
 import com.ericliz.cryptoportifolio.model.Item;
+import com.ericliz.cryptoportifolio.model.ResponseItem;
 import com.ericliz.cryptoportifolio.service.ItemService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -61,6 +62,6 @@ public class ItemController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Item not found.");
         }
         itemService.delete(itemModelOptional.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Item deleted successfully.");
+        return ResponseEntity.status(HttpStatus.OK).body(ResponseItem.getStatusMessage("Item deleted successfully."));
     }
 }
