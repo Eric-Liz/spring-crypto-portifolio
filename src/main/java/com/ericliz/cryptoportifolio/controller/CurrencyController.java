@@ -7,10 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -25,5 +22,9 @@ public class CurrencyController {
         Currency currencyModel = new Currency();
         BeanUtils.copyProperties(currencyDTO, currencyModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(currencyService.saveCurrency(currencyModel));
+    }
+    @GetMapping
+    public ResponseEntity<Object> getCurrencies(){
+        return ResponseEntity.status(HttpStatus.OK).body(currencyService.getAllCurrencies());
     }
 }
