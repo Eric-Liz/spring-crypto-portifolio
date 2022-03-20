@@ -27,4 +27,8 @@ public class CurrencyController {
     public ResponseEntity<Object> getCurrencies(){
         return ResponseEntity.status(HttpStatus.OK).body(currencyService.getAllCurrencies());
     }
+    @GetMapping("/symbols")
+    public ResponseEntity<Object> getUsedCurrenciesSymbols(){
+        return ResponseEntity.status(HttpStatus.OK).body(currencyService.getAllUsedCurrencies());
+    }
 }

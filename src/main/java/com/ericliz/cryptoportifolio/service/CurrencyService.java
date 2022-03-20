@@ -22,4 +22,7 @@ public class CurrencyService {
     public List<Currency> getAllCurrencies(){
         return currencyRepository.findAll();
     }
+    public List<Currency> getAllUsedCurrencies(){
+        return currencyRepository.findAllUsedCurrenciesSymbols();
+    }
 }
