@@ -12,4 +12,5 @@ import java.util.UUID;
 public interface CurrencyRepository extends JpaRepository<Currency, UUID> {
     @Query(value = "SELECT DISTINCT CURRENCY.ID , SYMBOL, CURRENCY_NAME  FROM CURRENCY INNER JOIN ITEM ON CURRENCY.CURRENCY_NAME ILIKE ITEM.NAME", nativeQuery = true)
     List<Currency> findAllUsedCurrenciesSymbols();
+
 }

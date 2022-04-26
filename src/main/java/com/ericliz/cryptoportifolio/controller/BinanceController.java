@@ -25,5 +25,10 @@ public class BinanceController {
     public ResponseEntity<List<BinanceAvgPrice>> getGroupAvgPrice(@RequestBody @Valid List<String> currencySymbols){
         return ResponseEntity.status(HttpStatus.OK).body(binanceService.getAvgPriceList(currencySymbols));
     }
+    @GetMapping("/balance")
+    public ResponseEntity<List<Object>> getBalance(){
+        return ResponseEntity.status(HttpStatus.OK).body(binanceService.getBalance());
+    }
+
 
 }
